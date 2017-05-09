@@ -30,6 +30,17 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'cancancan'
+gem 'simple_form'
+
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem "twitter"
+gem 'bootstrap-social-rails'
+
+gem 'carrierwave', '~> 1.0'
+gem "mini_magick"
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootswatch-rails'
 gem "font-awesome-rails"
