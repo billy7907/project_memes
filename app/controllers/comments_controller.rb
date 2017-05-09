@@ -4,5 +4,12 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-  
+  def create
+
+  end
+
+  def destroy
+
+  end
+
 end
