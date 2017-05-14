@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :likers, through: :likes, source: :user
 
-  belongs_to :users
+  belongs_to :user
 
   validates :title, presence: true
 
