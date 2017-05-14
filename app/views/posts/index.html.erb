@@ -11,10 +11,10 @@
         <br>
 
         <div style='padding-right:18em'>
-          <%= link_to post_likes_path(@post), method: :post do %>
+          <%= link_to post_likes_path(p), method: :post do %>
             <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
           <% end %>
-          <%= link_to like_path(@post.like_for(current_user)), method: :delete do %>
+          <%= link_to like_path(p.like_for(current_user)), method: :delete do %>
             <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
           <% end %>
           <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
