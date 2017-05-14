@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
 
+  mount_uploader :image, ImageUploader
+
   has_many :comments, {dependent: :destroy}
   has_many :likes, dependent: :destroy
   has_many :likers, through: :likes, source: :user
@@ -7,6 +9,7 @@ class Post < ApplicationRecord
   belongs_to :users
 
   validates :title, presence: true
+
 
   def liked_by(user)
     likes.exists?(user: user)
