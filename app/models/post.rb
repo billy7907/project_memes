@@ -10,7 +10,6 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
-
   def liked_by(user)
     likes.exists?(user: user)
   end
