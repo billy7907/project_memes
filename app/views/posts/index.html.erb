@@ -11,8 +11,12 @@
         <br>
 
         <div style='padding-right:18em'>
-          <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
-          <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+          <%= link_to post_likes_path(@post), method: :post do %>
+            <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
+          <% end %>
+          <%= link_to like_path(@post.like_for(current_user)), method: :delete do %>
+            <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+          <% end %>
           <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
         </div>
         <hr style='width:27em'>
