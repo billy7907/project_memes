@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  resources :posts, shallow: true,  only: [:index, :new, :create] do
+  resources :posts, shallow: true do
     resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy]
   end
