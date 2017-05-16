@@ -4,11 +4,9 @@ Rails.application.routes.draw do
 
   resources :posts, shallow: true do
     resources :comments, only: [:create, :destroy]
-    resources :likes, only: [:create, :destroy]
   end
 
   resources :users, except: [:destroy] do
-    resources :likes, only: :index
     delete :destroy, on: :collection
   end
 
