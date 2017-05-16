@@ -10,12 +10,12 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
 
-  def liked_by(user)
-    likes.exists?(user: user)
+  def vote_for(user)
+    votes.find_by(user: user)
   end
 
-  def like_for(user)
-    likes.find_by(user: user)
+  def votes_total
+    votes.up.count - votes.down.count
   end
 
 end
