@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   has_many :comments, {dependent: :destroy}
+  has_many :votes, dependent: :destroy
+  has_many :voters, through: :votes, source: :user
 
   belongs_to :user
 
