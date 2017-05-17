@@ -7,29 +7,29 @@
         <h4><%= p.title %></h4>
         <img src="<%= p.image %>">
         <br>
-        <span style='padding-right:12em'>143 points • 22 comments</span>
+        <span style='padding-right:12em'><%= p.votes_total%> points • 22 comments</span>
         <br>
 
         <div style='padding-right:18em'>
-          <% if @vote.nil? %>
-            <%= link_to post_votes_path(@post, { is_up: true }), method: :post do %>
+          <% if p.vote_for(current_user).nil? %>
+            <%= link_to post_votes_path(p, { is_up: true }), method: :post do %>
               <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
             <% end %>
-            <%= link_to post_votes_path(@post, { is_up: false }), method: :post do %>
+            <%= link_to post_votes_path(p, { is_up: false }), method: :post do %>
               <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
             <% end %>
-          <% elsif @vote.is_up? %>
-            <%= link_to vote_path(@vote), method: :delete do %>
+          <% elsif p.vote_for(current_user).is_up? %>
+            <%= link_to vote_path(p.vote_for(current_user)), method: :delete do %>
               <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
             <% end %>
-            <%= link_to vote_path(@vote, { is_up: false }), method: :patch do %>
+            <%= link_to vote_path(p.vote_for(current_user), { is_up: false }), method: :patch do %>
               <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
             <% end %>
           <% else %>
-            <%= link_to vote_path(@vote, { is_up: true }), method: :patch do %>
+            <%= link_to vote_path(p.vote_for(current_user), { is_up: true }), method: :patch do %>
               <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
             <% end %>
-            <%= link_to vote_path(@vote), method: :delete do %>
+            <%= link_to vote_path(p.vote_for(current_user)), method: :delete do %>
               <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
             <% end %>
           <% end %>
