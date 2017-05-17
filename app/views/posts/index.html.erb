@@ -11,8 +11,28 @@
         <br>
 
         <div style='padding-right:18em'>
-          <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
-          <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+          <% if @vote.nil? %>
+            <%= link_to post_votes_path(@post, { is_up: true }), method: :post do %>
+              <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to post_votes_path(@post, { is_up: false }), method: :post do %>
+              <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+            <% end %>
+          <% elsif @vote.is_up? %>
+            <%= link_to vote_path(@vote), method: :delete do %>
+              <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to vote_path(@vote, { is_up: false }), method: :patch do %>
+              <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+            <% end %>
+          <% else %>
+            <%= link_to vote_path(@vote, { is_up: true }), method: :patch do %>
+              <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to vote_path(@vote), method: :delete do %>
+              <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
           <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
         </div>
         <hr style='width:27em'>
