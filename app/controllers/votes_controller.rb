@@ -15,9 +15,9 @@ class VotesController < ApplicationController
 
   def update
     if @vote.update is_up: params[:is_up]
-      redirect_to @vote.question
+      redirect_to @vote.post
     else
-      redirect_to @vote.question
+      redirect_to @vote.post
     end
   end
 

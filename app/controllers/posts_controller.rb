@@ -2,7 +2,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc)
-    # @vote = @posts.vote_for(current_user)
   end
 
   def new
