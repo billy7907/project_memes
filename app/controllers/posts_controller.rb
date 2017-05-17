@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
 
   def index
-    @post = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc)
+    @post = Post.find params[:id]
+    @vote = @post.vote_for(current_user)
+
   end
 
   def new
