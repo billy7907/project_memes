@@ -7,10 +7,10 @@
         <h4><%= link_to p.title, post_path(p) %></h4>
         <%= link_to image_tag(p.image), post_path(p) %>
         <br>
-        <span style='padding-right:12em'><%= p.votes_total%> points • 22 comments</span>
+        <span style='padding-right:13.5em'><%= p.votes_total%> points • 22 comments</span>
         <br>
 
-        <div style='padding-right:18em'>
+        <div style='padding-right:18.5em'>
           <% if p.vote_for(current_user).nil? %>
             <%= link_to post_votes_path(p, { is_up: true }), method: :post do %>
               <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
