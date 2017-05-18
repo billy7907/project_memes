@@ -33,7 +33,9 @@
               <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
             <% end %>
           <% end %>
-          <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+          <%= link_to post_path(p) do %>
+            <i class="fa fa-commenting-o fa-2x" aria-hidden="true"></i>
+          <% end %>
         </div>
         <hr style='width:27em'>
       </div>
