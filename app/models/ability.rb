@@ -12,13 +12,13 @@ class Ability
       post.user == user
     end
 
-    can :vote, Post do |post|
-      user != post.user
-    end
-
-    cannot :vote, Post do |post|
-      user == post.user
-    end
+    # can :vote, Post do |post|
+    #   user != post.user
+    # end
+    #
+    # cannot :vote, Post do |post|
+    #   user == post.user
+    # end
 
     can :manage, Vote do |v|
       user == v.user
