@@ -3,7 +3,6 @@
   <%= image_tag(@post.image) %>
   <br>
   <span style='padding-right:14em'><%= @post.votes_total%> points • 22 comments</span>
-
   <div style='padding-right:21em'>
     <% if @post.vote_for(current_user).nil? %>
       <%= link_to post_votes_path(@post, { is_up: true }), method: :post do %>
@@ -27,7 +26,6 @@
         <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
       <% end %>
     <% end %>
-
   </div>
   <hr>
 </div>
