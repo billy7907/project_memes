@@ -28,4 +28,17 @@
     <% end %>
   </div>
   <hr>
+
+  <%= simple_form_for [@post, @comment] do |c| %>
+    <div>
+      <h4>Leave a comment</h4>
+      <%= c.text_area :body, cols: "40", rows: "3" %>
+      <br>
+    </div>
+    <div style='padding-left:19.5em'>
+      <%= c.submit 'Post', class: 'btn btn-primary btn-sm' %>
+    </div>
+  <% end %>
+
+  
 </div>
