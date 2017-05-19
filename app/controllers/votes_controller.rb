@@ -6,7 +6,6 @@ class VotesController < ApplicationController
 
   def create
     vote = Vote.new user: current_user, post: @post, is_up: params[:is_up]
-    p vote
     if vote.save
       redirect_to root_path
     else
