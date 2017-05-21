@@ -38,6 +38,14 @@
     <div style='padding-left:19.5em'>
       <%= c.submit 'Post', class: 'btn btn-primary btn-sm' %>
     </div>
+    <hr>
   <% end %>
 
+  <div>
+    <% @post.comments.order(created_at: :desc).each do |c| %>
+    <%= c.body %>
+    <% end %>
+
+  </div>
+  <br><br>
 </div>
