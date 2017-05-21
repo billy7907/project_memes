@@ -42,8 +42,10 @@
   <% end %>
 
   <div>
-    <% @post.comments.order(created_at: :desc).each do |c| %>
+    <% @post.comments.order(created_at: :asc).each do |c| %>
+    <%= c.user.full_name %>:
     <%= c.body %>
+    <br><br>
     <% end %>
 
   </div>
