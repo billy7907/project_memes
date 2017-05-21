@@ -7,7 +7,7 @@
         <h4><%= link_to p.title, post_path(p) %></h4>
         <%= link_to image_tag(p.image), post_path(p) %>
         <br>
-        <span style='padding-right:13.5em'><%= p.votes_total%> points • 22 comments</span>
+        <span style='padding-right:14.5em'><%= p.votes_total%> points • <%= p.comments.count %> comments</span>
         <br>
 
         <div style='padding-right:18.5em'>
