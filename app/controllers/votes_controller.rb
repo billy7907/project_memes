@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
-
+  
+  before_action :authenticate_user!
   before_action :find_post, only: :create
   before_action :vote_create, only: :create
   before_action :find_vote, :authorize_vote_change, only: [:update, :destroy]
