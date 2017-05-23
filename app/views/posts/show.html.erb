@@ -47,6 +47,9 @@
     <% @post.comments.order(created_at: :asc).each do |c| %>
     <%= c.user.full_name %>:
     <%= c.body %>
+    <div class='pull-right'>
+      <%= link_to 'Delete', comment_path(c),method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
     <br><br>
     <% end %>
   </div>
