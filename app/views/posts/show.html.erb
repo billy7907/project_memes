@@ -29,16 +29,18 @@
   </div>
   <hr>
 
-  <%= simple_form_for [@post, @comment] do |c| %>
-    <div>
-      <h4><%= current_user.full_name %></h4>
-      <%= c.text_area :body, cols: "40", rows: "3", placeholder: 'Leave a Comment' %>
-      <br>
-    </div>
-    <div style='padding-left:19.5em'>
-      <%= c.submit 'Post', class: 'btn btn-primary btn-sm' %>
-    </div>
-    <hr>
+  <% if user_sign_in? %>
+    <%= simple_form_for [@post, @comment] do |c| %>
+      <div>
+        <h4><%= current_user.full_name %></h4>
+        <%= c.text_area :body, cols: "40", rows: "3", placeholder: 'Leave a Comment' %>
+        <br>
+      </div>
+      <div style='padding-left:19.5em'>
+        <%= c.submit 'Post', class: 'btn btn-primary btn-sm' %>
+      </div>
+      <hr>
+    <% end %>
   <% end %>
 
   <div>
