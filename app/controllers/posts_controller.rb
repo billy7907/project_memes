@@ -23,6 +23,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def hot
+    @posts = Post.order(created_at: :desc)
+  end
+
   private
 
   def post_params
