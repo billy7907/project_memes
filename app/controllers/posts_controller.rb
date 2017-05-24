@@ -24,7 +24,7 @@ class PostsController < ApplicationController
   end
 
   def hot
-    @posts = Post.order(created_at: :desc)
+    
   end
 
   private
