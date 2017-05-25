@@ -3,7 +3,6 @@
     <div class='row'>
 
       <% @posts.each do |p| %>
-      <% if p.votes_total > 20 %>
         <div class='col-lg-12 col-md-12 col-sm-12 col-xs-12' style='padding:0px'>
           <h4><%= link_to p.title, post_path(p) %></h4>
           <%= link_to image_tag(p.image), post_path(p) %>
@@ -40,7 +39,6 @@
           </div>
           <hr style='width:27em'>
         </div>
-        <% end %>
       <% end %>
 
     </div>
