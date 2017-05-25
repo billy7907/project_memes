@@ -23,8 +23,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def hot
-    
+  def fresh
+
   end
 
   private

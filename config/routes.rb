@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'posts#index'
 
-  get 'posts/hot' => 'posts#hot', as: :hot
+  get 'posts/fresh' => 'posts#fresh', as: :fresh
 
   resources :posts, shallow: true do
     resources :comments, only: [:create, :destroy]
