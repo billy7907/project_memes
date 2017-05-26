@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def fresh
+  def hot
     @posts = Post.order(created_at: :desc)
   end
 
