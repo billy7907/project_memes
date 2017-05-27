@@ -21,7 +21,7 @@
           <li><%= link_to current_user.full_name, root_path %></li>
           <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to 'Sign In', new_session_path, id:'sign-in', data: {toggle: 'modal', target: '#sign-in'} %></li>
+          <li><%= link_to 'Sign In', new_session_path, id:'signin', data: {toggle: 'modal', target: '#signin'} %></li>
           <li><%= link_to 'Sign Up', new_user_path %></li>
         <% end %>
       </ul>
@@ -34,5 +34,6 @@
         </div>
       </div>
     </div>
+
   </div>
 </nav>

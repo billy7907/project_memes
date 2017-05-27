@@ -10,7 +10,6 @@
             <br>
             <span style='padding-right:14.5em'><%= p.votes_total%> points • <%= p.comments.count %> comments</span>
             <br>
-
             <div style='padding-right:18.5em'>
               <% if p.vote_for(current_user).nil? %>
                 <%= link_to post_votes_path(p, { is_up: true }), method: :post do %>
