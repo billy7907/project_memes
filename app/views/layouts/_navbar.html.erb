@@ -20,20 +20,41 @@
           <li><%= link_to current_user.full_name, root_path %></li>
           <li><%= link_to 'Logout', sessions_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to 'Sign In', new_session_path, id:'in', data: {toggle: 'modal', target: '#in'}%></li>
-          <li><%= link_to 'Sign Up', new_user_path %></li>
+          <li><%= link_to 'Sign In', new_session_path, data: {toggle: 'modal', target: '#signin'}%></li>
+          <li><%= link_to 'Sign Up', new_user_path, data: {toggle: 'modal', target: '#signup'} %></li>
         <% end %>
       </ul>
 
 
-      <div class="modal fade" id="in">
+      <div class="modal fade" id="signin">
         <div class='modal-dialog'>
           <div class='modal-content'>
 
           </div>
         </div>
       </div>
+
+      <div class="modal fade" id="signup">
+        <div class='modal-dialog'>
+          <div class='modal-content'>
+
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
   </div>
 </nav>
+
+<style>
+.modal-backdrop:not(:last-child) {
+  display: none;
+}
+
+.modal-lg{
+  width: 1500px
+}
+
+</style>
