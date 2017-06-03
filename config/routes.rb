@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'posts#index'
+  patch '/users/:id/edit_password' => 'users#edit_password', as: :edit_password
 
   get 'posts/hot' => 'posts#hot', as: :hot
 
