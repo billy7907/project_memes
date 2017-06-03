@@ -1,0 +1,27 @@
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+</button>
+
+<div style='margin-bottom: 20px'>
+  <h1>Edit Profile</h1>
+
+  <%= simple_form_for @user do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :email, required: false %>
+  <%= f.submit 'Update Profile', class: 'btn btn-primary' %>
+  <% end %>
+
+  <h1>Update Password</h1>
+
+  <%= simple_form_for @user, :url => edit_password_path(@user) do |f| %>
+  <%= f.input :current_password %>
+  <%= f.input :new_password %>
+  <%= f.input :new_password_confirmation %>
+  <%= f.submit 'Update Password', class: 'btn btn-primary' %>
+  <% end %>
+
+  <h1>Delete Account</h1>
+  <%= link_to "Delete", user_path(@user), method: :delete, class: 'btn btn-danger' %>
+
+</div>
