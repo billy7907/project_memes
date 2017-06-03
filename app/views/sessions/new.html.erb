@@ -4,7 +4,7 @@
   </button>
 </h1>
 
-<%= form_tag sessions_path do %>
+<%= form_tag sessions_path, remote: true do %>
   <div>
     <div class="form-group">
       <%= label_tag :email, "Email", class: "control-label" %>
