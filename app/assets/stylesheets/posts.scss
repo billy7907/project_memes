@@ -1,3 +1,7 @@
 img {
   width: 25em;
 }
+
+.modal-backdrop:not(:first-child) {
+  display: none;
+}
