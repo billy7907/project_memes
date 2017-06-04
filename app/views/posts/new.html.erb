@@ -1,5 +1,11 @@
-<h1>Create A New Post</h1>
-<%= simple_form_for @post do |f| %>
+<h1>Create A New Post
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</h1>
+
+<div id='error'></div>
+<%= simple_form_for @post, remote: true do |f| %>
 <%= f.input :title %>
 <%= f.input :image, required:true %>
 <%= f.submit 'Submit', class: 'btn btn-primary' %>
