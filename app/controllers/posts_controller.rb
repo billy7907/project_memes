@@ -26,7 +26,6 @@ class PostsController < ApplicationController
         format.js { render :failure }
       end
     end
-
   end
 
   def hot
