@@ -41,9 +41,6 @@ class VotesController < ApplicationController
   end
 
   def vote_create
-    if cannot? :vote, @post
-      p 'cannot vote'
-    end
     redirect_to @post if cannot? :vote, @post
   end
 
