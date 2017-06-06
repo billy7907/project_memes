@@ -5,8 +5,8 @@
 </h1>
 
 <div id='error'></div>
-<%= simple_form_for @post do |f| %>
+<%= simple_form_for @post, remote: true do |f| %>
 <%= f.input :title %>
-<%= f.input :image, required:true %>
+<%= f.input :image %>
 <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>

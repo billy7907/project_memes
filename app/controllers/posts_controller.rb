@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    render :new, layout: false
   end
 
   def show
@@ -17,10 +18,14 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     @post.user = current_user
 
-    if @post.save
-      redirect_to root_path
-    else
-      render :new
+    respond_to do |format|
+      if @post.save
+        p 'success'
+        format.html { redirect_to root_path }
+      else
+        p 'failed'
+        format.js { render :failure }
+      end
     end
 
   end
