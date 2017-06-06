@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find params[:id]
     @comment = Comment.new
+    @vote = @post.vote_for(current_user)
   end
 
   def create

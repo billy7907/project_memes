@@ -7,14 +7,15 @@
   <br>
   <span style='padding-right:14.5em'><%= @post.votes_total%> points • <%= @post.comments.count %> comments</span>
   <div style='padding-right:21em'>
-    <% if @post.vote_for(current_user).nil? %>
+    
+    <% if @vote.nil? %>
       <%= link_to post_votes_path(@post, { is_up: true }), method: :post do %>
         <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
       <% end %>
       <%= link_to post_votes_path(@post, { is_up: false }), method: :post do %>
         <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
       <% end %>
-    <% elsif @post.vote_for(current_user).is_up? %>
+    <% elsif @vote.is_up? %>
       <%= link_to vote_path(@post.vote_for(current_user)), method: :delete do %>
         <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
       <% end %>
@@ -29,6 +30,7 @@
         <i class="fa fa-arrow-circle-down fa-2x" aria-hidden="true"></i>
       <% end %>
     <% end %>
+
   </div>
   <hr>
 
