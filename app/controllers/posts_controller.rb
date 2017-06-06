@@ -21,10 +21,8 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        p 'success'
         format.html { redirect_to root_path }
       else
-        p 'failed'
         format.js { render :failure }
       end
     end

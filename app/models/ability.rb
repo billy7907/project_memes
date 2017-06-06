@@ -13,5 +13,9 @@ class Ability
       user == v.user
     end
 
+    can :vote, Post do |v|
+      user != v.user
+    end
+
   end
 end
