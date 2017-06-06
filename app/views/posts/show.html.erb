@@ -5,9 +5,9 @@
   <h3><%= @post.title %></h3>
   <%= image_tag(@post.image) %>
   <br>
-  <span style='padding-right:14.5em'><%= @post.votes_total%> points • <%= @post.comments.count %> comments</span>
+  <span style='padding-right:14.5em'><%= @post.votes_total %> points • <%= @post.comments.count %> comments</span>
   <div style='padding-right:21em'>
-    
+
     <% if @vote.nil? %>
       <%= link_to post_votes_path(@post, { is_up: true }), method: :post do %>
         <i class="fa fa-arrow-circle-up fa-2x" aria-hidden="true"></i>
