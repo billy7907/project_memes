@@ -7,6 +7,6 @@
 <div id='error'></div>
 <%= simple_form_for @post do |f| %>
 <%= f.input :title %>
-<%= f.input :image %>
+<%= f.input :image, required:true %>
 <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>

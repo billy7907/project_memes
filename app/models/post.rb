@@ -9,6 +9,8 @@ class Post < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true
+  validates :image, presence: true
+
 
   def vote_for(user)
     votes.find_by(user: user)
