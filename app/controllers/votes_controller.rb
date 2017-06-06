@@ -8,25 +8,25 @@ class VotesController < ApplicationController
   def create
     vote = Vote.new user: current_user, post: @post, is_up: params[:is_up]
     if vote.save
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
   end
 
   def update
     if @vote.update is_up: params[:is_up]
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
   end
 
   def destroy
     if @vote.destroy
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to :back
+      redirect_back(fallback_location: root_path)
     end
   end
 
